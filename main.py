@@ -10,11 +10,9 @@ def main():
     module = 5
     gear = Gearclass(20, 200, 50, 0, -5)
     gear1 = Gearclass(module=module, radius=50, width=50, angle=0, speed_rpm=0)
-    gear2 = Gearclass(module=module, radius=30, width=30, angle=0, speed_rpm=0)
-    gear3 = Gearclass(module=module, radius=25, width=35, angle=0, speed_rpm=0)
-    gear4 = Gearclass(module=module, radius=75, width=40, angle=0, speed_rpm=0)
-    gear5 = Gearclass(module=module, radius=150, width=80, angle=0, speed_rpm=0)
-    gears = [gear1, gear2, gear3, gear4, gear5]
+    gear2 = Gearclass(module=module, radius=150, width=30, angle=0, speed_rpm=0)
+    gear3 = Gearclass(module=module, radius=400, width=35, angle=0, speed_rpm=0)
+    gears = [gear1, gear2, gear3]
 
     while not window_should_close():
         begin_drawing()
@@ -35,7 +33,7 @@ def main():
         #gear.update()
         # Example usage:
 
-        gearbox = GearBox(gears, input_speed_rpm=speed, connections=[(0, 1), (1, 2), (2, 4), (4, 3)])
+        gearbox = GearBox(gears, input_speed_rpm=speed, connections=[(0, 1), (1, 2)])
 
         # Define gear positions (x, y) for drawing
 
