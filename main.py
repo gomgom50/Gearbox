@@ -11,13 +11,16 @@ def main():
     gear = Gearclass(20, 200, 50, 0, -5)
     gear1 = Gearclass(module=2.5, radius=25, width=80, angle=0, speed_rpm=0, index=0)
     gear2 = Gearclass(module=2.5, radius=50, width=30, angle=0, speed_rpm=0,index=1)
-    gear3 = Gearclass(module=2.5, radius=35, width=45, angle=0, speed_rpm=0, index=2)
+    gear3 = Gearclass(module=2.5, radius=35, width=90, angle=0, speed_rpm=0, index=2)
     gear4 = Gearclass(module=2.5, radius=75, width=50, angle=0, speed_rpm=0, index=3)
-    gears = [gear1, gear2, gear3, gear4]
-    axle1 = Axle(gears=[gear1, gear4])
-    axle2 = Axle(gears=[gear2, gear3])
-    Axels = [axle1, axle2]
-    gearbox = GearBox(Axels, input_speed_rpm=speed, connections=[(0, 1)])
+    gear5 = Gearclass(module=2.5, radius=50, width=40, angle=0, speed_rpm=0, index=4)
+    gear6 = Gearclass(module=2.5, radius=50, width=80, angle=0, speed_rpm=0, index=5)
+    gears = [gear1, gear2, gear3, gear4, gear5, gear6]
+    axle1 = Axle(gears=[gear1, gear2])
+    axle2 = Axle(gears=[gear3, gear4])
+    axle3 = Axle(gears=[gear5, gear6])
+    Axels = [axle1, axle2, axle3]
+    gearbox = GearBox(Axels, input_speed_rpm=speed, connections=[(0, 2), (3,4)])
     width = 100
 
     while not window_should_close():
@@ -41,6 +44,8 @@ def main():
         #draw_gear(gea  r, 400, 300)
         #gear.update()
         # Example usage:
+        print(gear1.diameters)
+        print(gear1.num_teeth)
 
 
         print(gearbox.connections)

@@ -22,7 +22,7 @@ class Gearclass:
 
 
     def calculate_teeth(self):
-        return int(round(self.radius / self.module))
+        return int(round(self.calculate_diameters()["pitch"] / self.module))
 
     def calculate_diameters(self):
         pitch_diameter = self.radius * 2
@@ -89,6 +89,7 @@ def draw_gear(gear, x, y):
     gui_text_box(Rectangle(x+gear.width, y-15/2, 50, 15), str(gear.calculate_rpm_degrees(gear.speed)), 5, False)
     draw_text("Torque", int(x + gear.width), int(y + 15 / 2), 5, RAYWHITE)
     gui_text_box(Rectangle(x + gear.width, y + 30 / 2, 50, 15), str(gear.torque), 5, False)
+    gui_text_box(Rectangle(x + gear.width, y + 60 / 2, 50, 15), str(gear.num_teeth), 5, False)
 
     def update_gear_speeds(self):
         for i, gear in enumerate(self.gears):
