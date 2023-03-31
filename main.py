@@ -44,12 +44,6 @@ def main():
         #draw_gear(gea  r, 400, 300)
         #gear.update()
         # Example usage:
-        print(gear1.diameters)
-        print(gear1.num_teeth)
-
-
-        print(gearbox.connections)
-
         # Define gear positions (x, y) for drawing
 
         # Update and draw the entire gearbox
